@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="/css/flashcard.css" type="text/css" rel="stylesheet" />
+  <title>ابزار ساخت فلش کارت</title>
+</head>
+
+<body>
+  <div class="discription">
+    <h1>ابزار ساخت فلش کارت</h1>
+    <p>
+      کلمات را به صورت زیر در کادر پایین بنویسید
+
+    </p>
+  </div>
+  <div id="start-form">
+    <textarea cols="30" rows="10" style="text-align: center; font-family: cursive;" id="questions"
+      placeholder="ex: abroad:oversea"></textarea>
+    <br />
+    <input type="checkbox" id="reversecheckbox" />
+    <label for="reversecheckbox">پرسش معکوس</label>
+    <br />
+    <input type="button" id="startbtn" value="شروع آزمون" />
+  </div>
+
+  <div id="question-form">
+    <div id="questiontitle">سوال</div>
+    <input id="showanswer" type="button" value="نمایش پاسخ" />
+    <div class="actionbar">
+      <input type="button" value="جواب صحیح" id="trueanswerbtn" />
+      <input type="button" value="جواب غلط" id="falseanswerbtn" />
+    </div>
+  </div>
+
+  <div id="result-form">
+    <p id="gradep"></p>
+    <div id="answers">
+      <div class="tanswerc">
+        <label>جواب های درست</label>
+        <br />
+        <textarea id="true-answers" cols="20" rows="10" readonly></textarea>
+      </div>
+      <div class="fanswerc">
+        <label>جواب های غلط</label>
+        <br />
+        <textarea id="wrong-answers" cols="20" rows="10" readonly></textarea>
+      </div>
+    </div>
+  </div>
+
+  <a href="/exprofile"><input type="button" value="بازگشت به صفحه اصلی" id="returntostart" /></a>
+</body>
+<script type="text/javascript" src="/js/flashcard.js"></script>
+
+</html>

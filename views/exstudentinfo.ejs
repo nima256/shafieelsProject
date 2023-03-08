@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/Profile.css">
+    <link type="text/css" rel="stylesheet" href="/css/jalalidatepicker.min.css" />
+    <script type="text/javascript" src="/js/jalalidatepicker.min.js"></script>
+</head>
+
+<body>
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                        <h3 class="mb-4">برای ادامه کارمون نیاز داریم که فرم پایین رو کامل کنی</h3>
+                        <form action="/exstudentinfo" method="post" novalidate class="needs-validation">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="username">نام کاربری</label>
+                                        <input name="username" type="text" class="form-control" placeholder="nima"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fullname">نام و نام خانوادگی</label>
+                                        <input name="fullname" type="text" class="form-control" placeholder="نیما مهدی"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" style="direction:rtl;text-align:right;">شماره
+                                            تلفن</label>
+                                        <input name="phone" type="number" class="form-control" placeholder="09012376543"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="birthdate" style="direction:rtl;text-align:right;">تاریخ
+                                            تولد</label>
+                                        <input name="birthdate" type="text" class="form-control initial-value-example"
+                                            placeholder="1385/6/21" required data-jdp>
+                                        <script>jalaliDatepicker.startWatch();</script>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="classday" style="direction:rtl;text-align:right;">روز های کلاس
+                                            شما</label>
+                                        <input name="classday" type="text" class="form-control"
+                                            placeholder="یکشنبه سه شنبه پنجشنبه " required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="classtime" style="direction:rtl;text-align:right;">تایم کلاس
+                                            شما</label>
+                                        <input name="classtime" type="text" class="form-control"
+                                            placeholder="از ساعت 5 تا 7" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="grade" style="direction:rtl;text-align:right;">سطح شما</label>
+                                        <input name="grade" type="text" class="form-control" placeholder="File3"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="teacher" style="direction:rtl;text-align:right;">مدرس
+                                            شما</label>
+                                        <select name="teacher" required>
+                                            <option value="">انتخاب کنید</option>
+                                            <% for(let teacher of teacherAll) {%>
+                                                <option value="<%= teacher._id %>">
+                                                    <%= teacher.name %>
+                                                </option>
+                                                <% } %>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="gender" style="direction:rtl;text-align:right;">جنسیت</label>
+                                        <select name="gender" id="gender" required>
+                                            <option value="">انتخاب کنید</option>
+                                            <option value="male">مرد</option>
+                                            <option value="female">زن</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary">ثبت</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://unpkg.com/@majidh1/jalalidatepicker/dist/jalalidatepicker.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>FormWizard_v5</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="colorlib.com">
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="/css/gradetest.css">
+</head>
+
+<body style="background-color: #81cd81;">
+	<div class="wrapper">
+		<div class="image-holder">
+			<img src="https://www.uplooder.net/img/image/16/85bc31fc747ce4279d784d475cbb80a1/form-wizard.png" alt="">
+		</div>
+		<form action="">
+			<div id="wizard">
+				<!-- SECTION 1 -->
+				<h4></h4>
+				<section>
+					<div class="form-row form-group">
+						<div class="form-holder">
+							<label for="">
+								نام و نام خانوادگی
+							</label>
+							<input type="text" class="form-control" readonly value="<%= student.fullname %> ">
+						</div>
+					</div>
+					<div class="form-row">
+						<label for="">
+							تاریخ تولد
+						</label>
+						<input type="text" class="form-control" readonly value="<%= student.birthdate %> ">
+					</div>
+					<div class="form-row">
+						<label for="">
+							جنسیت
+						</label>
+						<div class="form-holder">
+							<select name="gender" id="">
+								<% if(student.gender=='male' ) {%>
+									<option value="male" selected>مرد</option>
+									<option value="female" disabled>زن</option>
+									<% } else if(student.gender=='female' ){%>
+										<option value="male" disabled>مرد</option>
+										<option value="female" selected>زن</option>
+										<% } %>
+							</select>
+							<i class="zmdi zmdi-caret-down"></i>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<label for="">
+							شماره تلفن
+						</label>
+						<input type="number" class="form-control" readonly value="<%= student.phone %>">
+					</div>
+				</section>
+
+				<!-- SECTION 2 -->
+				<% if(!student.classday) {%>
+					<h4></h4>
+					<section>
+						<h4 style="direction:rtl;text-align:right;">کد رهگیری شما: <%= Studentcode %>
+						</h4>
+						<h4 style="direction:rtl;text-align:right;"> شما میتوانید با کد پیگیری خود در روز های
+							<br>
+							<%= Day %>
+								<br>
+								در ساعت <%= Time %>
+						</h4>
+						<a href="/exprofile/<%= student._id %>">بازگشت</a>
+					</section>
+					<% } else { %>
+						<h4></h4>
+						<section>
+							<h6 style="direction:rtl;text-align:right;">تبریک... شما در تعیین سطح را گذراندید با ادامه
+								دادن میتوانید در کلاس های ما ثبت نام کنید. <br>در طی چندین ساعت دیگر میتوانید برنامه
+								کلاس های خود را مشاهده نمایید</h6>
+						</section>
+						<h4></h4>
+						<section>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+								<label class="form-check-label" for="flexCheckCheckedDisabled"
+									style="direction:rtl;text-align:right;position: relative;left: 67%;padding-bottom: 5px;">
+									پرداخت هزینه کتاب
+								</label>
+							</div>
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled"
+								checked disabled>
+							<label class="form-check-label" for="flexCheckCheckedDisabled"
+								style="direction:rtl;text-align:right;position: relative;left: 60%;padding-bottom: 5px;">
+								پرداخت شهریه ماهیانه
+							</label>
+
+							<p style="direction:rtl;text-align:right;">اگر کتاب مخصوص به سطح خود را تهیه نکردید و
+								میخواهید از زبانسرای شفیعی تهیه کنید گزینه پرداخت هزینه کتاب را انتخاب کنید </p>
+							<button type="button" class="btn btn-success">پرداخت</button>
+			</div>
+
+
+			</section>
+			<% } %>
+
+
+
+	</div>
+	</form>
+	</div>
+
+	<script src="/js/jquery-3.3.1.min.js"></script>
+
+	<!-- JQUERY STEP -->
+	<script src="/js/jquery.steps.js"></script>
+
+	<script src="/js/main.js"></script>
+	<!-- Template created and distributed by Colorlib -->
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/Profile.css">
+</head>
+
+<body>
+    <section class="py-5 my-5">
+        <div class="container">
+            <h1 class="mb-5">پروفایل دانش آموز</h1>
+            <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+                <div class="profile-tab-nav border-right">
+                    <div class="p-4">
+                        <div class="img-circle text-center mb-3">
+                            <img <% if(student.gender=='male' ) {%> src="" <% } else {%>
+                                src="/img/female.png" <% } %> alt="Image" class="shadow">
+                        </div>
+                        <h4 class="text-center">
+                            <%= student.fullname %>
+                        </h4>
+                    </div>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab"
+                            aria-controls="account" aria-selected="true">
+                            <i class="fa fa-home text-center mr-1"></i>
+                            اطلاعات دانش آموز
+                        </a>
+                        <% if(student.classday) {%>
+                            <a class="nav-link" id="security-tab" data-toggle="pill" href="#reportcard" role="tab"
+                                aria-controls="reportcard" aria-selected="false">
+                                <i class="fa fa-user text-center mr-1"></i>
+                                کارنامه
+                            </a>
+                            <a class="nav-link" id="security-tab" data-toggle="pill" href="#flashcard" role="tab"
+                                aria-controls="flashcard" aria-selected="false">
+                                <i class="fa fa-user text-center mr-1"></i>
+                                فلش کارت
+                            </a>
+                            <% } else {%>
+                                <a class="nav-link" id="application-tab" data-toggle="pill" href="#application"
+                                    role="tab" aria-controls="application" aria-selected="false">
+                                    <i class="fa fa-tv text-center mr-1"></i>
+                                    تعیین سطح
+                                </a>
+                                <% } %>
+                    </div>
+                </div>
+                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">نام و نام خانوادگی</label>
+                                        <input name="name" type="text" class="form-control" readonly
+                                            value="<%= student.fullname %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone" style="direction:rtl;text-align:right;">شماره تلفن</label>
+                                        <input name="phone" type="text" class="form-control" readonly
+                                            value="<%= student.phone %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="birthdate" style="direction:rtl;text-align:right;">تاریخ
+                                            تولد</label>
+                                        <input name="birthdate" type="string" class="form-control" readonly
+                                            value="<%= student.birthdate %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="isTermOver" style="direction:rtl;text-align:right;">ترم به پایان
+                                            رسیده؟</label>
+                                        <input name="isTermOver" type="string" class="form-control" readonly
+                                            value="<% if(student.payment === true) {%> بله <% } else if(student.payment === false) {%>خیر<% } else {%><% } %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="classday" style="direction:rtl;text-align:right;">روز های
+                                            کلاس</label>
+                                        <input name="classday" type="string" class="form-control" readonly
+                                            value="<%= student.classday %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="classtime" style="direction:rtl;text-align:right;">زمان کلاس</label>
+                                        <input name="classtime" type="string" class="form-control" readonly
+                                            value="<%= student.classtime %>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="grade" style="direction:rtl;text-align:right;">سطح شما</label>
+                                        <input name="grade" type="string" class="form-control" readonly
+                                            value="<%= student.grade %>">
+                                    </div>
+                                </div>
+                                <% if(student.teacher) {%>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="" style="direction:rtl;text-align:right;">مدرس شما</label>
+                                            <input name="" type="string" class="form-control" readonly
+                                                value="<%= student.teacher.name %>">
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="gender"
+                                                    style="direction:rtl;text-align:right;">جنسیت</label>
+                                                <select name="gender" id="">
+                                                    <% if(student.gender=='male' ) {%>
+                                                        <option value="male" selected>مرد</option>
+                                                        <option value="female" disabled>زن</option>
+                                                        <% } else if(student.gender=='female' ){%>
+                                                            <option value="male" disabled>مرد</option>
+                                                            <option value="female" selected>زن</option>
+                                                            <% } %>
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>
+                        </form>
+                    </div>
+                    <% if(student.classday) {%>
+                        <% if(student.payment==true) {%>
+                            <div class="tab-pane fade" id="reportcard" role="tabpanel" aria-labelledby="reportcard-tab">
+                                <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="account" role="tabpanel"
+                                        aria-labelledby="account-tab">
+                                        <h3 class="mb-4">کارنامه</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="assignment">نمره تکالیف از
+                                                        10
+                                                        نمره</label>
+                                                    <input id="assignment" itemref="" type="text" class="form-control"
+                                                        readonly
+                                                        value="<% if(student.reportcard.assignment_10) {%> <%= student.reportcard.assignment_10 %><% } else {%><% } %> ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="quiz" style="direction:rtl;text-align:right;">ازمون
+                                                        های
+                                                        کلاسی از
+                                                        5
+                                                        نمره</label>
+                                                    <input id="quiz" type="text" class="form-control" readonly
+                                                        value="<% if(student.reportcard.quiz_5) {%> <%= student.reportcard.quiz_5 %><% } else {%><% } %> ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="participationFinalOralExam">امتحان
+                                                        شفاهی
+                                                        از 30
+                                                        نمره</label>
+                                                    <input id="participationFinalOralExam" type="text"
+                                                        class="form-control" readonly
+                                                        value="<% if(student.reportcard.participationFinalOralExam_30) {%> <%= student.reportcard.participationFinalOralExam_30 %><% } else {%><% } %> ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="midTermWrittenExam"
+                                                        style="direction:rtl;text-align:right;">آزمون
+                                                        کتبی میان
+                                                        ترم از 10
+                                                        نمره</label>
+                                                    <input id="midTermWrittenExam" type="text" class="form-control"
+                                                        readonly
+                                                        value="<% if(student.reportcard.midTermWrittenExam_10) {%> <%= student.reportcard.midTermWrittenExam_10 %><% } else {%><% } %> ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="attendance" style="direction:rtl;text-align:right;">حضور
+                                                        در
+                                                        کلاس از 15
+                                                        نمره</label>
+                                                    <input id="attendance" type="text" class="form-control" readonly
+                                                        value="<% if(student.reportcard.attendance_15) {%> <%= student.reportcard.attendance_15 %><% } else {%><% } %> ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="finalWrittenExam"
+                                                        style="direction:rtl;text-align:right;">آزمون
+                                                        کتبی پایانی از 30
+                                                        نمره</label>
+                                                    <input id="finalWrittenExam" type="text" class="form-control"
+                                                        readonly
+                                                        value="<% if(student.reportcard.finalWrittenExam_30) {%> <%= student.reportcard.finalWrittenExam_30 %><% } else {%><% } %> ">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" id="totalscore">
+                                                <div class="form-group">
+                                                    <label for="totalScore">جمع
+                                                        نمرات</label>
+                                                    <input type="text" class="form-control" readonly
+                                                        value="<% if(student.reportcard.finalWrittenExam_30) {%> <%= student.reportcard.assignment_10 + student.reportcard.quiz_5 + student.reportcard.participationFinalOralExam_30 + student.reportcard.midTermWrittenExam_10 + student.reportcard.attendance_15 + student.reportcard.finalWrittenExam_30 %><% } else {%><% } %>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } else {%>
+                                <div class="tab-pane fade" id="reportcard" role="tabpanel"
+                                    aria-labelledby="reportcard-tab">
+                                    <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="account" role="tabpanel"
+                                            aria-labelledby="account-tab">
+                                            <h3 class="mb-4">کارنامه</h3>
+                                            <h5>ترم شما هنوز به پایان نرسیده یا شهریه خود را پرداخت نکرده اید</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <div class="tab-pane fade" id="flashcard" role="tabpanel"
+                                        aria-labelledby="flashcard-tab">
+                                        <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                                            <div class="tab-pane fade show active" id="account" role="tabpanel">
+                                                <a href="/falshcard"><button class="btn btn-primary">ساخت
+                                                        فلش
+                                                        کارت</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <% } else {%>
+                                        <div class="tab-pane fade" id="application" role="tabpanel"
+                                            aria-labelledby="application-tab">
+                                            <h3 class="mb-4">تعیین سطح</h3>
+                                            <div>
+                                                <p>برای تعیین سطح رایگان کلیک کنید</p>
+                                                <a href="/gradetest"><button class="btn btn-primary">تعیین
+                                                        سطح</button></a>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                </div>
+    </section>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if(success.length) {%>
+        <script>
+            Swal.fire({
+                position: 'top-end', icon: 'success', title: '<%= Title %>', showConfirmButton: false, timer: 2000
+            }) </script>
+        <% } %>
+
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

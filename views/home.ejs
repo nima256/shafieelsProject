@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shafiee Language School</title>
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <!--Navigation bar-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">Shafiee</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#feature">درباره ما </a></li>
+          <li><a href="#organisations">مقاله </a></li>
+          <li><a href="#courses">کتاب ها</a></li>
+          <li><a href="#pricing">قیمت</a></li>
+          <% if(!student) {%>
+            <% if(!currentUser) {%>
+              <li><a href="/signin"> ورود / ثبت نام</a></li>
+              <% } else {%>
+                <li><a href="/logout">خروج</a></li>
+                <li><a href="/isStudiedInInstitute">تکمیل ثبت نام</a></li>
+                <% } %>
+                  <% } else {%>
+                    <li><a href="/logout">خروج</a></li>
+                    <li><a href="/exprofile">پروفایل شما</a></li>
+                    <% } %>
+                      <li class="btn-trial"><a href="#footer">تعیین سطح رایگان</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--/ Navigation bar-->
+  <!--Banner-->
+  <div class="banner">
+    <div class="bg-color">
+      <div class="container">
+        <div class="row">
+          <div class="banner-text text-center">
+            <div class="text-border">
+              <h2 class="text-dec">کیفیت و صداقت</h2>
+            </div>
+            <div class="intro-para text-center quote">
+              <p class="big-text">. . . یادگیری امروز پیشرو فردا</p>
+              <p class="small-text">، یادگیری زبان انگلیسی باعث افزایش ضریب هوشی می شود به این دلیل که ما
+                زبانی را یاد می گیریم که زبان مادری ما نیست و باعث رشد و افزایش هوش به خصوص در کودکان می شود. یادگیری
+                زبان انگلیسی علاوه بر افزایش کارکرد مغز، درک تکنولوژی را برای ما آسان تر می کند</p>
+              <a href="#footer" class="btn get-quote">کلاس های حضوری</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Banner-->
+  <!--Feature-->
+  <section id="feature" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>درباره ما</h2>
+
+          <hr class="bottom-line">
+        </div>
+        <div class="feature-info">
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <h4 dir="rtl" style="text-align: right;">تسلط به زبان </h4>
+                <p dir="rtl" style="text-align: right;">تدريس تضمينى و کاملا کاربردی زبان انگليسى ‏‎ کلیه سنین ارائه
+                  دهنده ضرورى ترين نكات آموزشي يادگيرى
+                  كاربردى زبان كه تا كنون نياموخته ايد و بعد از يك دوره ى كامل آموزشى شما قادر خواهيد بود به صورت
+                  خودآموز و بدون شركت در هيچ كلاسى، روند آموزش زبان خود را كاملا موثر و مفيد ادامه دهيد.</p>
+              </div>
+              <div class="fea-img pull-left">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color: #5fcf80;" width="39" height="39"
+                  fill="currentColor" class="bi bi-balloon-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8.48 10.901C11.211 10.227 13 7.837 13 5A5 5 0 0 0 3 5c0 2.837 1.789 5.227 4.52 5.901l-.244.487a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2.376 2.376 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224l-.244-.487ZM4.352 3.356a4.004 4.004 0 0 1 3.15-2.325C7.774.997 8 1.224 8 1.5c0 .276-.226.496-.498.542-.95.162-1.749.78-2.173 1.617a.595.595 0 0 1-.52.341c-.346 0-.599-.329-.457-.644Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <h4 dir="rtl" style="text-align: right;">اساتید</h4>
+                <p dir="rtl" style="text-align: right;">دارای اساتید کاملا مجرب و پرورش یافته در موسسه اموزش زبان شفیعی
+                  که با اموزش دیدن در صورت صلاح دید
+                  میتوانید به عنوان مدرس زبان شروع به فعالیت و کسب درامد کنید</p>
+              </div>
+              <div class="fea-img pull-right">
+                <svg dir="rtl" xmlns="http://www.w3.org/2000/svg" style="color: #5fcf80; text-align: right;" width="39"
+                  height="39" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="fea">
+            <div class="col-md-4">
+              <div class="heading pull-right">
+                <h4 dir="rtl" style="text-align: right;">سابقه</h4>
+                <p dir="rtl" style="text-align: right;">دارای 20 سال سابقه بهترین موسسه اموزش زبان در محدوده رزکان و
+                  مشکین دشت<br> با اعتماد به ما راحت ترین
+                  روش یک مدرس زبان عالی شوید</p>
+              </div>
+              <div class="fea-img pull-left">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color: #5fcf80;" width="39" height="39"
+                  fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  <path
+                    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
+                  <path
+                    d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ feature-->
+  <!--Organisations-->
+  <section id="organisations" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="orga-stru">
+              <h3>53%</h3>
+              <p>متوسط</p>
+              <i class="fa fa-male"></i>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="orga-stru">
+              <h3>32%</h3>
+              <p>عدم تسلط</p>
+              <i class="fa fa-male"></i>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="orga-stru">
+              <h3>15%</h3>
+              <p>مسلط</p>
+              <i class="fa fa-male"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-info">
+            <hgroup>
+              <h3 class="det-txt" dir="rtl" style="text-align: right;"> چند درصد مردم ایران به زبان انگلیسی مسلط هستند؟
+              </h3>
+              <h4 class="sm-txt" dir="rtl" style="text-align: right;">(اخرین اطلاعات سال 1401)</h4>
+            </hgroup>
+            <p class="det-p" dir="rtl" style="text-align: right;"> بنا به تحقیق "اینگیلیش فرست"، در خاورمیانه
+              وضعیت ایران از سایر کشورها بهتر است.
+              در ایران نزدیک به ۵۳ درصد مردم در سطح پایینی به انگلیسی می‌توانند ارتباط برقرار کنند. این رقم در ترکیه ۵۱
+              ، در قطر ۴۸ و در سوریه ۴۷ درصد است</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Organisations-->
+  <!--Cta-->
+  <section id="cta-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="text-center">به زبان اموزان موسسه ما بپیوندید</h2>
+          <p class="cta-2-txt">برای پیوستن به زبان اموزان موفق ما ابتدا وارد شوید و برای دریافت اخرین اخبار ایمیل خود را
+            وارد کنید</p>
+          <div class="cta-2-form text-center">
+            <form action="#" method="post" id="workshop-newsletter-form">
+              <input name="" placeholder="ادرس ایمیل شما" type="email">
+              <input class="cta-2-form-submit-btn" value="عضو شدن" type="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Cta-->
+  <!--work-shop-->
+  <section id="pricing" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>قیمت دوره ها</h2>
+          <p>قیمت دوره ها به صورت ماهیانه میباشد و طبق تعریفه سازمان اموزش زبان تهران میباشد <br> توجه داشته باشید که
+            این مبلغ به صورت سرمایه ای برای ساخت اینده خود میباشد پس در ثبت نام درنگ نکنید</p>
+          <hr class="bottom-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="price-table">
+            <!-- Plan  -->
+            <div class="pricing-head">
+              <h4 style="font-family:sans-serif;">Starter</h4>
+              <span class="amount">۲۰۰,۰۰۰</span>
+            </div>
+
+            <!-- Plean Detail -->
+            <div class="price-in mart-15">
+              <a href="/signin" class="btn btn-bg yellow btn-block">ثبت نام</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="price-table">
+            <!-- Plan  -->
+            <div class="pricing-head">
+              <h4 style="font-family:sans-serif;">Family</h4>
+              <span class="amount">۲۵۰,۰۰۰</span>
+            </div>
+
+            <!-- Plean Detail -->
+            <div class="price-in mart-15">
+              <a href="/signin" class="btn btn-bg red btn-block">ثبت نام</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <div class="price-table">
+            <!-- Plan  -->
+            <div class="pricing-head">
+              <h4 style="font-family:sans-serif;">American File</h4>
+              <span class="amount">۳۰۰,۰۰۰</span>
+            </div>
+
+            <!-- Plean Detail -->
+            <div class="price-in mart-15">
+              <a href="/signin" class="btn btn-bg green btn-block">ثبت نام</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--/ work-shop-->
+  <!--Faculity member-->
+  <section id="faculity-member" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>آشنایی با اساتید</h2>
+          <p>تعدادی از اساتید زبانسرای که تمام انها در زبانسرای شفیعی پرورش یافته اند</p>
+          <hr class="bottom-line">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img src="https://www.uplooder.net/img/image/50/8b2234a637c5ced0a34b3052bb5351f6/mentor.jpg" alt=""
+                  class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">محمدعلی شفیعی</p>
+              <p class="pm-staff-profile-title">مدرس ارشد زبان</p>
+
+              <p class="pm-staff-profile-bio">دارای بیش از 20 سال تجربه مسلط به چندین زبان زنده دنیا و موسس زبانسرای
+                شفیعی </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="height:150px; width:150px; "
+                  src="https://www.uplooder.net/img/image/49/a53c1b7a12d3c88ce6032beb39e54038/IMG-20230126-164819-330.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">دانیال تاجیک</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio">دارای 1 سال سابقه تدریس زبان انگلیسی</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img src="https://www.uplooder.net/img/image/29/29476160a3912bef96a10a11a985c99b/" alt=""
+                  class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">یگانه الوانساز</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+
+              دارای 4 سال تدریس لیسانس مترجمی زبان انگلیسی از دانشگاه علوم و تحقیقات
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="width: 150px;
+                height: 150px;"
+                  src="https://www.uplooder.net/img/image/73/40917310e94656a96af0aa61b1aa3cb8/IMG-20230126-165213-338.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">یگانه خداخواه</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio">دارای ۱ سال سابقه تدریس
+                دانشجوی کارشناسی مترجمی زبان انگلیسی</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img
+                  src="https://www.uplooder.net/img/image/33/993a102fec308888ec0cabbda5c1871f/IMG-20230126-163511-462.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">آیدا خلوصی مشفق</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+
+              <p class="pm-staff-profile-bio">دانشجوی کارشناسی رشته آموزش زبان دارای 1 سال سابقه تدریس انگلیسی </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="    width: 150px;
+                height: 150px;"
+                  src="https://www.uplooder.net/img/image/18/ae6922a4fb85041af91e131963c37311/photo-2023-02-01-13-37-07.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">فاطمه آزادبخش</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio"> دارای 2 سال سابقه تدريس دانشجو كارشناسي رشته پرستاري </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="    width: 150px;
+                height: 150px;"
+                  src="https://www.uplooder.net/img/image/15/3481cf4c3301ac75b9a942ec94336c58/IMG-20230126-172517-555.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">رضا شفیعی</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio">کارشناس ادبیات انگلیسی 6 سال سابقه تدریس 2 سال سابقه تدریس آیلتس</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="width: 150px;
+                height: 150px;"
+                  src="https://www.uplooder.net/img/image/74/7bf7c2c7e214abfa588f9e24b8c79872/photo-۲۰۲۳-۰۲-۰۱-۱۳-۴۹-۱۸.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">علیرضا رنجبر</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio">دارای 1 سال سابقه تدریس
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img
+                  src="https://www.uplooder.net/img/image/92/5f9370c239aca8f250e6d0b7accfa6a8/IMG-20230201-162837-982.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">مرضیه شجاعی</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio">دانشجوی کارشناسی مهندسی برق، دارای ۱ سال سابقه ی تدریس
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="    width: 150px;
+                height: 150px;"
+                  src="https://www.uplooder.net/img/image/84/25475246ded38f213e6aff3c2315f5d2/IMG-20230209-213045-426.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">مبینا ذوالقدری</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio">دانشجوی کارشناسی رشته کامپیوتر
+                ۱ سال سابقه تدریس زبان انگلیسی</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="pm-staff-profile-container">
+            <div class="pm-staff-profile-image-wrapper text-center">
+              <div class="pm-staff-profile-image">
+                <img style="    width: 150px;
+                height: 150px;"
+                  src="https://www.uplooder.net/img/image/73/37072aadb53d2a8ab586f9496a61bd82/photo-2023-01-15-13-07-00.jpg"
+                  alt="" class="img-thumbnail img-circle" />
+              </div>
+            </div>
+
+            <div class="pm-staff-profile-details text-center">
+              <p class="pm-staff-profile-name">میثاق مدنی</p>
+              <p class="pm-staff-profile-title">مدرس زبان</p>
+              <p class="pm-staff-profile-bio"> دانشجوی کارشناسی حقوق دارای 2 سابقه تدریس</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonial" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2 class="white">آرشیو تعدادی از زبان آموزان ما که فارغ التحصیل شدند</h2>
+          <hr class="bottom-line bg-white">
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+          <img class="img-SH" src="https://www.uplooder.net/img/image/2/5c7705e41d2a83445e0a58c97773bee5/2.jpg"
+            alt="" />
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <img class="img-SH" src="https://www.uplooder.net/img/image/28/5163db24f4b0a550cb7968b4edc5dbab/3.jpg"
+            alt="" />
+        </div>
+
+  </section>
+  <!--/ Testimonial-->
+  <!--Courses-->
+  <section id="courses" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>کتاب های مورد تدریس ما</h2>
+          <p>مجموعه کتاب های امریکن انگلیش مورد تایید سازمان اموزش زبان و تایید صلاحیت ان برای اموزش در کل کشور</p>
+          <hr class="bottom-line">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img
+              src="https://dkstatics-public.digikala.com/digikala-products/120279484.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90"
+              class="img-responsive">
+
+            <figcaption>
+              <h3>First Friends</h3>
+              <p>برای اینکه بتوانید بر یک زبان مسلط شوید و به راحتی آن را صحبت کنید، باید برتمام مهارت های چهارگانه و به
+                خصوص گفتار مسلط شوید تا بتوانید در تعاملات خود به طور موثری شرکت پذیر باشید.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-3 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img
+              src="https://dkstatics-public.digikala.com/digikala-products/89caa827f05d164c2051ef9c55871a22bcc4d75d_1607268634.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90"
+              class="img-responsive">
+            <figcaption>
+              <h3>Family and Friends</h3>
+              <p>برای اینکه بتوانید بر یک زبان مسلط شوید و به راحتی آن را صحبت کنید، باید برتمام مهارت های چهارگانه و به
+                خصوص گفتار مسلط شوید تا بتوانید در تعاملات خود به طور موثری شرکت پذیر باشید.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-3 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img
+              src="https://dkstatics-public.digikala.com/digikala-products/120743933.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90"
+              class="img-responsive">
+            <figcaption>
+              <h3>American English Files</h3>
+              <p>برای اینکه بتوانید بر یک زبان مسلط شوید و به راحتی آن را صحبت کنید، باید برتمام مهارت های چهارگانه و به
+                خصوص گفتار مسلط شوید تا بتوانید در تعاملات خود به طور موثری شرکت پذیر باشید.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-3 col-sm-6 padleft-right">
+          <figure class="imghvr-fold-up">
+            <img
+              src="https://dkstatics-public.digikala.com/digikala-products/dded829778cdb00e9ccc6cbe750c651c4ad5d33b_1602930710.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90"
+              class="img-responsive">
+            <figcaption>
+              <h3>Big english</h3>
+              <p>برای اینکه بتوانید بر یک زبان مسلط شوید و به راحتی آن را صحبت کنید، باید برتمام مهارت های چهارگانه و به
+                خصوص گفتار مسلط شوید تا بتوانید در تعاملات خود به طور موثری شرکت پذیر باشید.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ Courses-->
+  <!--/ Pricing-->
+  <!--Contact-->
+  <section id="work-shop" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>ارتباط با ما</h2>
+          <p></p>
+          <hr class="bottom-line">
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" style="color: #5fcf80;" width="65" height="65" fill="currentColor"
+                class="bi bi-person" viewBox="0 0 16 16">
+                <path
+                  d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+              </svg>
+            </div>
+            <div class="icon-text">
+              <h4 style="font-family: sans-serif;
+              font-size: large;" class="ser-text"><svg xmlns="http://www.w3.org/2000/svg"
+                  style="color: rgb(221, 59, 18); " width="20" height="20" fill="currentColor" class="bi bi-instagram"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                </svg>@SHAFIEE_LANGUAGE
+                <br><br><br>
+                <svg xmlns="http://www.w3.org/2000/svg" style="color: #0088cc;" width="20" height="20"
+                  fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                  <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                </svg>@SH_ZABAN
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" style="color: #5fcf80;" width="65" height="65" fill="currentColor"
+                class="bi bi-telephone" viewBox="0 0 16 16">
+                <path
+                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg>
+            </div>
+            <div class="icon-text">
+              <h4 class="ser-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  class="bi bi-telephone" viewBox="0 0 16 16">
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg>36776809
+                <br><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
+                  <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                </svg>09193711765
+
+              </h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box1 text-center" style="
+        background: #fff;
+    padding: 14px 30px 15px;
+    box-shadow: 0 0 1px 1px rgb(0 0 0 / 10%);
+">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" style="color: #5fcf80;" width="65" height="65" fill="currentColor"
+                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+              </svg>
+            </div>
+            <div class="icon-text">
+              <a target="_blank" href="https://balad.ir/p/6YuBWyzxq7DkGg"> <img style="    width: 20em;
+                    height: 15em;"
+                  src="https://www.uplooder.net/img/image/73/9bad9831fb18bcc8faddb3e0239760eb/photo-2023-01-25-20-37-19.jpg"
+                  alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--/ Contact-->
+  <!--Footer-->
+
+  <footer id="footer" class="footer" style="font-family: system-ui;">
+    <p style="text-align: center;
+font-size: xx-large;">طراحان سایت</p>
+    <div class="container text-center">
+
+      <div class="Developers-card">
+        <div class="card-container" style="background-color: #231E39;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px rgb(0 0 0 / 75%);
+    font-family: system-ui;
+    color: #B3B8CD;
+    padding-top: 30px;
+    margin-right: 30px;
+    position: relative;
+    display: inline-block;
+    width: 350px;
+    max-width: 100%;
+    text-align: center;">
+          <span class="pro" style="	color: #231E39;
+background-color: #FEBB0B;
+border-radius: 3px;
+font-size: 14px;
+font-weight: bold;
+padding: 3px 7px;
+position: absolute;
+top: 30px;
+left: 30px;">Junior</span>
+          <img class="round" style="	border: 1px solid #03BFCB;
+border-radius: 50%;
+padding: 7px;" src="https://www.uplooder.net/img/image/15/89d2ff98f6b3083bb96b304af754b8ca/programmer.png" width="143"
+            height="144" alt="user" />
+          <h3>DANILO</h3>
+          <h6>IRAN.KARAJ</h6>
+          <p style="font-family: system-ui;">Web Designer and <br /> front-end developer</p>
+          <div class="buttons">
+            <button class="primary" style="	background-color: #03BFCB;
+border: 1px solid #03BFCB;
+border-radius: 3px;
+color: #231E39;
+font-family: Montserrat, sans-serif;
+font-weight: 500;
+padding: 10px 25px;font-family: system-ui;" id="number-btn" data-hover="09054243464">
+              Call
+            </button>
+            <button class="primary ghost" style="	background-color: transparent;
+color: #02899C;" id="telegram-btn" data-hover="@Danilloi">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                  <path
+                    d="M 83.924 7.756 L 4.202 38.496 c -5.442 2.183 -5.409 5.219 -0.992 6.571 l 20.455 6.385 l 7.035 23.153 c 0.925 2.553 0.469 3.566 3.151 3.566 c 2.069 0 2.983 -0.946 4.138 -2.069 l 9.941 -9.666 l 20.681 15.28 c 3.806 2.1 6.553 1.012 7.501 -3.533 l 13.577 -63.978 C 91.079 8.631 87.565 6.103 83.924 7.756 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(33,151,201); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path d="M 33.942 72.016 l -6.747 -22.204 L 79.13 19.002 L 40.751 56.789 L 33.942 72.016 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+              </svg>
+            </button>
+            <button class="primary ghost" style="	background-color: transparent;
+color: #02899C;" id="instagram-btn" data-hover="@Danilooi">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                  <path
+                    d="M 45 8.109 c 12.015 0 13.439 0.046 18.184 0.262 c 4.387 0.2 6.77 0.933 8.356 1.549 c 1.955 0.721 3.723 1.872 5.174 3.366 c 1.495 1.452 2.645 3.22 3.366 5.174 c 0.616 1.586 1.349 3.968 1.549 8.356 c 0.216 4.745 0.262 6.168 0.262 18.184 s -0.046 13.439 -0.262 18.184 c -0.2 4.387 -0.933 6.77 -1.549 8.356 c -1.514 3.924 -4.616 7.026 -8.54 8.54 c -1.586 0.616 -3.968 1.349 -8.356 1.549 C 58.44 81.847 57.016 81.893 45 81.893 S 31.56 81.847 26.816 81.63 c -4.387 -0.2 -6.77 -0.933 -8.356 -1.549 c -1.955 -0.721 -3.723 -1.872 -5.174 -3.366 c -1.495 -1.452 -2.645 -3.22 -3.366 -5.174 c -0.616 -1.586 -1.349 -3.968 -1.549 -8.356 c -0.216 -4.745 -0.262 -6.168 -0.262 -18.184 S 8.154 31.562 8.37 26.816 c 0.2 -4.387 0.933 -6.77 1.549 -8.356 c 0.721 -1.955 1.872 -3.723 3.367 -5.174 c 1.452 -1.495 3.22 -2.645 5.174 -3.366 c 1.586 -0.616 3.968 -1.349 8.356 -1.549 C 31.561 8.154 32.984 8.108 45 8.109 M 45 0 C 32.779 0 31.246 0.052 26.447 0.271 c -4.79 0.219 -8.061 0.979 -10.923 2.092 c -3.003 1.13 -5.723 2.901 -7.97 5.19 c -2.29 2.248 -4.061 4.968 -5.192 7.97 c -1.112 2.862 -1.872 6.133 -2.09 10.923 C 0.052 31.246 0 32.779 0 45 s 0.052 13.754 0.272 18.553 c 0.219 4.79 0.979 8.061 2.092 10.923 c 1.13 3.003 2.901 5.723 5.19 7.97 c 2.248 2.289 4.968 4.06 7.97 5.19 c 2.862 1.112 6.133 1.873 10.923 2.092 C 31.247 89.948 32.779 90 45 90 s 13.754 -0.052 18.553 -0.271 c 4.79 -0.219 8.061 -0.979 10.923 -2.092 c 6.044 -2.338 10.823 -7.116 13.161 -13.161 c 1.112 -2.862 1.873 -6.133 2.092 -10.923 C 89.948 58.754 90 57.221 90 45 s -0.052 -13.754 -0.271 -18.553 c -0.219 -4.79 -0.979 -8.061 -2.092 -10.923 c -1.13 -3.003 -2.901 -5.723 -5.19 -7.97 c -2.248 -2.29 -4.968 -4.061 -7.971 -5.191 c -2.862 -1.112 -6.133 -1.872 -10.923 -2.09 C 58.754 0.052 57.221 0 45 0 L 45 0 L 45 0 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(166,55,149); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 45 21.892 c -12.762 0 -23.108 10.346 -23.108 23.108 S 32.238 68.108 45 68.108 S 68.108 57.762 68.108 45 l 0 0 C 68.108 32.238 57.762 21.892 45 21.892 z M 45 60 c -8.284 0 -15 -6.716 -15 -15 s 6.716 -15 15 -15 c 8.284 0 15 6.716 15 15 C 60 53.284 53.284 60 45 60 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(166,55,149); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <circle cx="69.02" cy="20.98" r="5.4"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(166,55,149); fill-rule: nonzero; opacity: 1;"
+                    transform="  matrix(1 0 0 1 0 0) " />
+                </g>
+              </svg>
+            </button>
+          </div>
+          <div class="skills" style="	background-color: #1F1A36;
+text-align: left;
+padding: 15px;
+margin-top: 30px;">
+            <h6 style="font-family: system-ui;">Skills</h6>
+            <ul style="	list-style-type: none;
+margin: 0;
+padding: 0;">
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">UI / UX</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">Front End Development</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">HTML</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">HTML5</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">CSS</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">SCSS</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">JavaScript</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-container" style="    background-color: #231E39;
+border-radius: 5px;
+box-shadow: 0px 10px 20px -10px rgb(0 0 0 / 75%);
+font-family: system-ui;
+color: #B3B8CD;
+padding-top: 30px;
+margin-right: 30px;
+position: relative;
+display: inline-block;
+width: 350px;
+max-width: 100%;
+text-align: center;">
+          <span class="pro" style="	color: #231E39;
+background-color: #FEBB0B;
+border-radius: 3px;
+font-size: 14px;
+font-weight: bold;
+padding: 3px 7px;
+position: absolute;
+top: 30px;
+left: 30px;font-family: system-ui;">Junior</span>
+          <img class="round" style="	border: 1px solid #03BFCB;
+border-radius: 50%;
+padding: 7px;" src="https://www.uplooder.net/img/image/15/89d2ff98f6b3083bb96b304af754b8ca/programmer.png" width="143"
+            height="144" alt="user" />
+          <h3>NIMA</h3>
+          <h6>IRAN.KARAJ</h6>
+          <p style=" font-family: system-ui;">Web Designer and <br /> Back-end developer</p>
+          <div class="buttons">
+            <button class="primary" style="background-color: #03BFCB;
+    border: 1px solid #03BFCB;
+    border-radius: 3px;
+    color: #231E39;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    padding: 10px 25px;" id="number-btn" data-hover="09014968828">
+              Call
+            </button>
+            <button class="primary ghost" style="	background-color: transparent;
+color: #02899C;" id="telegram-btn" data-hover="@NIMA_2561">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                  <path
+                    d="M 83.924 7.756 L 4.202 38.496 c -5.442 2.183 -5.409 5.219 -0.992 6.571 l 20.455 6.385 l 7.035 23.153 c 0.925 2.553 0.469 3.566 3.151 3.566 c 2.069 0 2.983 -0.946 4.138 -2.069 l 9.941 -9.666 l 20.681 15.28 c 3.806 2.1 6.553 1.012 7.501 -3.533 l 13.577 -63.978 C 91.079 8.631 87.565 6.103 83.924 7.756 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(33,151,201); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path d="M 33.942 72.016 l -6.747 -22.204 L 79.13 19.002 L 40.751 56.789 L 33.942 72.016 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+              </svg>
+            </button>
+            <button class="primary ghost" style="	background-color: transparent;
+color: #02899C;" id="instagram-btn" data-hover="@nima._256">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                width="16" height="16" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                  <path
+                    d="M 45 8.109 c 12.015 0 13.439 0.046 18.184 0.262 c 4.387 0.2 6.77 0.933 8.356 1.549 c 1.955 0.721 3.723 1.872 5.174 3.366 c 1.495 1.452 2.645 3.22 3.366 5.174 c 0.616 1.586 1.349 3.968 1.549 8.356 c 0.216 4.745 0.262 6.168 0.262 18.184 s -0.046 13.439 -0.262 18.184 c -0.2 4.387 -0.933 6.77 -1.549 8.356 c -1.514 3.924 -4.616 7.026 -8.54 8.54 c -1.586 0.616 -3.968 1.349 -8.356 1.549 C 58.44 81.847 57.016 81.893 45 81.893 S 31.56 81.847 26.816 81.63 c -4.387 -0.2 -6.77 -0.933 -8.356 -1.549 c -1.955 -0.721 -3.723 -1.872 -5.174 -3.366 c -1.495 -1.452 -2.645 -3.22 -3.366 -5.174 c -0.616 -1.586 -1.349 -3.968 -1.549 -8.356 c -0.216 -4.745 -0.262 -6.168 -0.262 -18.184 S 8.154 31.562 8.37 26.816 c 0.2 -4.387 0.933 -6.77 1.549 -8.356 c 0.721 -1.955 1.872 -3.723 3.367 -5.174 c 1.452 -1.495 3.22 -2.645 5.174 -3.366 c 1.586 -0.616 3.968 -1.349 8.356 -1.549 C 31.561 8.154 32.984 8.108 45 8.109 M 45 0 C 32.779 0 31.246 0.052 26.447 0.271 c -4.79 0.219 -8.061 0.979 -10.923 2.092 c -3.003 1.13 -5.723 2.901 -7.97 5.19 c -2.29 2.248 -4.061 4.968 -5.192 7.97 c -1.112 2.862 -1.872 6.133 -2.09 10.923 C 0.052 31.246 0 32.779 0 45 s 0.052 13.754 0.272 18.553 c 0.219 4.79 0.979 8.061 2.092 10.923 c 1.13 3.003 2.901 5.723 5.19 7.97 c 2.248 2.289 4.968 4.06 7.97 5.19 c 2.862 1.112 6.133 1.873 10.923 2.092 C 31.247 89.948 32.779 90 45 90 s 13.754 -0.052 18.553 -0.271 c 4.79 -0.219 8.061 -0.979 10.923 -2.092 c 6.044 -2.338 10.823 -7.116 13.161 -13.161 c 1.112 -2.862 1.873 -6.133 2.092 -10.923 C 89.948 58.754 90 57.221 90 45 s -0.052 -13.754 -0.271 -18.553 c -0.219 -4.79 -0.979 -8.061 -2.092 -10.923 c -1.13 -3.003 -2.901 -5.723 -5.19 -7.97 c -2.248 -2.29 -4.968 -4.061 -7.971 -5.191 c -2.862 -1.112 -6.133 -1.872 -10.923 -2.09 C 58.754 0.052 57.221 0 45 0 L 45 0 L 45 0 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(166,55,149); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 45 21.892 c -12.762 0 -23.108 10.346 -23.108 23.108 S 32.238 68.108 45 68.108 S 68.108 57.762 68.108 45 l 0 0 C 68.108 32.238 57.762 21.892 45 21.892 z M 45 60 c -8.284 0 -15 -6.716 -15 -15 s 6.716 -15 15 -15 c 8.284 0 15 6.716 15 15 C 60 53.284 53.284 60 45 60 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(166,55,149); fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <circle cx="69.02" cy="20.98" r="5.4"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(166,55,149); fill-rule: nonzero; opacity: 1;"
+                    transform="  matrix(1 0 0 1 0 0) " />
+                </g>
+              </svg>
+            </button>
+          </div>
+          <div class="skills" style="	background-color: #1F1A36;
+text-align: left;
+padding: 15px;
+margin-top: 30px;">
+            <h6 style="font-family: system-ui;">Skills</h6>
+            <ul style="	list-style-type: none;
+margin: 0;
+padding: 0;">
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">Back End Development</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">JavaScript</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">Node.JS</li>
+              <li style="	border: 1px solid #2D2747;
+      border-radius: 2px;
+      display: inline-block;
+      font-size: 12px;
+      margin: 0 7px 7px 0;
+      padding: 7px;font-family: system-ui;">HTML</li>
+
+
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
+      <br>
+      <p style="font-family: system-ui;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+          <path
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z" />
+        </svg>2022-2023 DANILO & NIMA. All Rights Reserved</p>
+      <div class="credits">
+
+
+      </div>
+    </div>
+  </footer>
+  <!--/ Footer-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <% if(success.length) {%>
+    <script>
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '<%= Title %>',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    </script>
+    <% } %>
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/jquery.easing.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/custom.js"></script>
+      <script src="/contactform/contactform.js"></script>
+
+</body>
+
+</html>
